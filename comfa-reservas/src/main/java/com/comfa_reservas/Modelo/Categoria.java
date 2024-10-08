@@ -1,5 +1,6 @@
 package com.comfa_reservas.Modelo;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Entity;
 import jakarta.persistence.*;
 
@@ -15,9 +16,11 @@ public class Categoria {
     private double porcentajeDescuento;
 
     @OneToMany(mappedBy = "categoria")
+    @JsonIgnore
     private List<Usuario> usuarios;
 
     //Constructor getters and setters
+
     public Categoria() {
     }
 

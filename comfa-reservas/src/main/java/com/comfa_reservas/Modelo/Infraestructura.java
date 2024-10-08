@@ -1,4 +1,5 @@
 package com.comfa_reservas.Modelo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Entity;
 
 import jakarta.persistence.*;
@@ -22,6 +23,7 @@ public class Infraestructura {
     private CentroRecreativo centroRecreativo;
 
     @OneToMany(mappedBy = "infraestructura")
+    @JsonIgnore
     private List<Reserva> reservas;
 
     // Getters y Setters
@@ -29,9 +31,11 @@ public class Infraestructura {
     public Infraestructura() {
     }
 
-    public Infraestructura(Integer idInfraestructura, String nombre, CentroRecreativo centroRecreativo, List<Reserva> reservas) {
+    public Infraestructura(Integer idInfraestructura, String nombre, Float tarifaPlena, Integer disponibilidad, CentroRecreativo centroRecreativo, List<Reserva> reservas) {
         this.idInfraestructura = idInfraestructura;
         this.nombre = nombre;
+        this.tarifaPlena = tarifaPlena;
+        this.disponibilidad = disponibilidad;
         this.centroRecreativo = centroRecreativo;
         this.reservas = reservas;
     }
@@ -50,6 +54,22 @@ public class Infraestructura {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public Float getTarifaPlena() {
+        return tarifaPlena;
+    }
+
+    public void setTarifaPlena(Float tarifaPlena) {
+        this.tarifaPlena = tarifaPlena;
+    }
+
+    public Integer getDisponibilidad() {
+        return disponibilidad;
+    }
+
+    public void setDisponibilidad(Integer disponibilidad) {
+        this.disponibilidad = disponibilidad;
     }
 
     public CentroRecreativo getCentroRecreativo() {

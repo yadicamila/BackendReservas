@@ -1,5 +1,6 @@
 package com.comfa_reservas.Modelo;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Entity;
 import jakarta.persistence.*;
 
@@ -15,6 +16,7 @@ public class CentroRecreativo {
         private String ubicacion; // Popayán, Santander, etc.
 
         @OneToMany(mappedBy = "centroRecreativo")
+        @JsonIgnore
         private List<Infraestructura> infraestructuras;
 
         // Getters y Setters

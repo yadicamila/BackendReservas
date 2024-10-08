@@ -4,6 +4,7 @@ import com.comfa_reservas.Modelo.Reserva;
 import com.comfa_reservas.Modelo.Usuario;
 import com.comfa_reservas.Servicio.Implementaciones.ReservaServicio;
 import com.comfa_reservas.Servicio.Implementaciones.UsuarioServicio;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,7 +18,6 @@ public class ReservaControlador {
     public ReservaControlador(ReservaServicio reservaServicio) {
         this.reservaServicio = reservaServicio;
     }
-
     //http:localhost:8080/api/reservas
     @PostMapping
     public Reserva save(@RequestBody Reserva reserva) {

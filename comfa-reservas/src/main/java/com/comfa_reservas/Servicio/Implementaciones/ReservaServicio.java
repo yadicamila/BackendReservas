@@ -5,9 +5,11 @@ import com.comfa_reservas.Modelo.Usuario;
 import com.comfa_reservas.Repositorio.ReservaRepositorio;
 import com.comfa_reservas.Repositorio.UsuarioRepositorio;
 import com.comfa_reservas.Servicio.IReservaServicio;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class ReservaServicio implements IReservaServicio {
     private final ReservaRepositorio reservaRepositorio;
 

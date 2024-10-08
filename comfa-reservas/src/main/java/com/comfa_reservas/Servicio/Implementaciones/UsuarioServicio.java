@@ -10,6 +10,7 @@ import java.util.List;
 public class UsuarioServicio implements IUsuarioServicio {
 
     private final  UsuarioRepositorio usuarioRepositorio;
+    
 
     public UsuarioServicio(UsuarioRepositorio usuarioRepositorio) {
         this.usuarioRepositorio = usuarioRepositorio;

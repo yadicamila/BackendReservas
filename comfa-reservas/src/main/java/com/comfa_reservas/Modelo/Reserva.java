@@ -16,11 +16,11 @@ public class Reserva {
     private LocalDate fechaFin;
     private String estado;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "usuario_id")
     private Usuario usuario;
-
-    @ManyToOne
+    //sirve para traer los daos de la infraestructura tambien
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "infraestructura_id")
     private Infraestructura infraestructura;
 
