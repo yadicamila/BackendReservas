@@ -8,7 +8,7 @@ import java.util.List;
 public interface IReservaServicio {
     Reserva save(Reserva reserva);
     List<Reserva> findAll();
-    //Reserva findById(Integer id);
-    //void deleteById (Integer id);
-    //Reserva update(Reserva reserva);
+    Reserva findById(Integer id);
+    void deleteById (Integer id);
+    Reserva update(Reserva reserva);
 }

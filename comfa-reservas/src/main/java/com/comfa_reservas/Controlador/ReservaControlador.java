@@ -29,4 +29,26 @@ public class ReservaControlador {
     public List<Reserva> findAll() {
         return reservaServicio.findAll();
     }
+
+    @GetMapping("/{id}")
+    public Reserva findById(@PathVariable Integer id){
+        return reservaServicio.findById(id);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteById(@PathVariable Integer id){
+        reservaServicio.deleteById(id);
+    }
+
+    //http:localhost:8080/api/customers
+    @PutMapping
+    public Reserva updateReserva(@RequestBody Reserva reserva){
+        Reserva reservaDb=reservaServicio.findById(reserva.getIdReserva());
+        reservaDb.setFechaReserva(reserva.getFechaReserva());
+        reservaDb.setFechaInicio(reserva.getFechaInicio());
+        reservaDb.setFechaFin((reserva.getFechaFin()));
+        reservaDb.setEstado(reserva.getEstado());
+
+        return reservaServicio.update(reservaDb);
+    }
 }
